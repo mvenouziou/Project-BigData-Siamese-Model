@@ -40,16 +40,14 @@ My second obstacle was in stripping down my encoder network to handle the proces
 
 The third obstacle was cutting down the number of operations required to classify 70,0000+ products, when each category contained no more that 50 products. My initial, naive approach would require an impossible number of pairwise comparisons. This was very interesting and was my first encounter with using algorithm optimization (ideas I learned working when completing Foobar with Google) in a data science context.
 
-The fourth obstacle was unexpected NaN results removing all image data from the model. Adding gradient clipping, batch norms and carefully checking all divisions did not remove the problem, which I still have been unable to track down. My makeshift "running out of time" solution is to babysit the training process and stop training before NaN's appear.
-
 ---
 **Results**
 
-Finally resolving the above challenges and leaving my model to train overnight, I awoke to find that the notebook had shut shut down, erasing my model checkpoints. I do not know why this occured, as I stayed within Kaggle's documented resource limits. After frantically retraining the model up until the last possible minute I found that, although the rules explicitly allowed the use of pretrained models, they prohibited me from installing Tensorflow Text that the Tensorflow Hub embedding [4] required in order to run. Dissapointed and without time to implement an alternative solution, I was not able to submit a solution in time for the competition deadline.
+Finally resolving the above challenges and leaving my model to train overnight, I awoke to find that the notebook had shut shut down, erasing my model checkpoints. I do not know why this occured, as I stayed within Kaggle's documented resource limits. After frantically retraining the model up until the last possible minute I found that, although the rules explicitly allowed the use of pretrained models, they prohibited me from installing Tensorflow Text, which my Tensorflow Hub embedding model [4] requires. Dissapointed and without time to implement an alternative solution, I was not able to submit a solution in time for the competition deadline.
 
 This of course exposes my own fault in not alloting myself an adequate amount of time to work through unanticipated issues that arose.  However, I learned a great deal throughout the process and have come out the better for it regardless of the ultimate outcome. 
 
-One of my main takewaways is the importance of producing a minimal working end-to-end process built before spending too much time experimenting with architecture. I spent several days attempting to build an advanced model with novel ideas (nearly ALL of which I had to strip out after truly understanding my computational resource limitations). Had I first developed a minimal working model under the exact competition restrictions, I would have overcome the unexpected "nuts and bolts" obstacles with enough time remaining to produce a good model and satisfactory submission to the challenge.
+One of my main takewaways is the importance of producing a minimal working end-to-end process built before spending too much time experimenting with architecture. I spent several days attempting to build an advanced model with novel ideas (most of which I had to strip out after truly understanding the challenge's strict computational resource limitations). Had I first developed a minimal working model under the exact competition restrictions, I would have overcome the unexpected "nuts and bolts" obstacles with enough time remaining to produce a good model to submit to the challenge.
 
 ---
 
